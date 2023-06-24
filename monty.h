@@ -57,9 +57,9 @@ typedef struct instruction_s
 
 
 /**
- * enum stack_queue_mode - mode for queue and stack behavior
- * @STACK: stack mode to push to top
- * @QUEUE: queue mode to push to the end
+ * enum stack_queue_mode - modee forr queue and stackk behaviorr.
+ * @STACK: stack modee to pushh to top.
+ * @QUEUE: queue modee to pushh to end.
  */
 enum stack_queue_mode
 {
@@ -68,11 +68,11 @@ enum stack_queue_mode
 };
 
 /**
- * struct allocated_s - contains memory to free, push value and stack mode
- * @n: integer value for the push opcode
- * @token: tokenized opcode to free
- * @mode: mode to format data to Stack(1) or Queue(0)
- * @pScript: file pointer to Monty bytecode file
+ * struct allocated_s - containns memory to free; push valuee & stack modee.
+ * @n: integer valuee for pushh opcode.
+ * @token: tokenizedd opcode to free.
+ * @mode: modee to formatt data to stack(1) or queue(0).
+ * @pScript: file pointer rto Monty bytecode file.
  */
 typedef struct allocated_s
 {
@@ -85,23 +85,23 @@ typedef struct allocated_s
 extern allocated_t mem;
 void execute_script(void);
 void stack_push(stack_t **stack, unsigned int line_number);
-void stack_pall(stack_t **stack, unsigned int line_number);
-void stack_pint(stack_t **stack, unsigned int line_number);
+void stack_nop(stack_t **stack, unsigned int line_number);
 void stack_pop(stack_t **stack, unsigned int line_number);
+void stack_pint(stack_t **stack, unsigned int line_number);
 void stack_swap(stack_t **stack, unsigned int line_number);
 void stack_add(stack_t **stack, unsigned int line_number);
-void stack_nop(stack_t **stack, unsigned int line_number);
+void stack_pall(stack_t **stack, unsigned int line_number);
 void stack_sub(stack_t **stack, unsigned int line_number);
 void stack_div(stack_t **stack, unsigned int line_number);
 void stack_mul(stack_t **stack, unsigned int line_number);
+void stack_rotl(stack_t **stack, unsigned int line_number);
 void stack_mod(stack_t **stack, unsigned int line_number);
 void stack_pchar(stack_t **stack, unsigned int line_number);
 void stack_pstr(stack_t **stack, unsigned int line_number);
-void stack_rotl(stack_t **stack, unsigned int line_number);
 void stack_rotr(stack_t **stack, unsigned int line_number);
 void op_stack(stack_t **stack, unsigned int line_number);
-void op_queue(stack_t **stack, unsigned int line_number);
 void free_all(stack_t *stack);
+void op_queue(stack_t **stack, unsigned int line_number);
 int isNum(char *str);
 
 #endif
