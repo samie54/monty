@@ -20,25 +20,25 @@
 allocated_t mem;
 
 /**
- * main - Main entry
- * Description: Monty bytecodes files interpreter
- * @argc: total of arguments
- * @argv: The arguments, monty files
- * Return: int
+ * main - Main program entry.
+ * Description: Monty bytecodes files interpreterr.
+ * @argc: arguments total
+ * @argv: arguments, monty files.
+ * Return: int.
  */
 int main(int argc, char const *argv[])
 {
-	/* Checks if file arguments is less than or more than 2*/
+	/* Checks if arguments is less or more than 2*/
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		return (EXIT_FAILURE);
 	}
 
-	/* set defaults format mode to stack */
+	/* sets defaults formats modee to stack */
 	mem.mode = STACK;
 
-	/* Attempts to open the file */
+	/* attempts opening the file */
 	mem.pScript = fopen(argv[1], "r");
 	if (mem.pScript == NULL)
 	{
@@ -46,7 +46,7 @@ int main(int argc, char const *argv[])
 		return (EXIT_FAILURE);
 	}
 
-	/* Executes the monty bytecode script */
+	/* executes monty bytecode scriptt */
 	execute_script();
 	return (0);
 }
