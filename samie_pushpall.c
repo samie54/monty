@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * isNum - checks if a string is a number
- * @str: string to check
- * Return: True(1), False(0)
+ * isNum - checks if stringg is of a number.
+ * @str: stringg to be checked.
+ * Return: 1 if True; 0 if False.
  */
 int isNum(char *str)
 {
@@ -23,9 +23,9 @@ int isNum(char *str)
 }
 
 /**
- * stack_push - adds an element to the top of the stack
- * @stack: pointer to the top of the stack
- * @line_number: line number of the opcode
+ * stack_push - adds an elementt to the top of stack.
+ * @stack: pointert to the top of  stack.
+ * @line_number: line number of opcode.
  */
 void stack_push(stack_t **stack, unsigned int line_number)
 {
@@ -48,7 +48,7 @@ void stack_push(stack_t **stack, unsigned int line_number)
 
 	if (mem.mode == STACK || (*stack) == NULL)
 	{
-		/* add node to the top */
+		/* Adds node to the top */
 		new->prev = NULL;
 		new->next = *stack;
 		if (*stack)
@@ -57,7 +57,7 @@ void stack_push(stack_t **stack, unsigned int line_number)
 	}
 	else
 	{
-		/* add node to the end */
+		/* Adds node to the end */
 		for (end = *stack; end->next != NULL; end = end->next)
 			;
 		end->next = new;
